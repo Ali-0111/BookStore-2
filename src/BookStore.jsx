@@ -1,13 +1,19 @@
 import '@/styles/Global.css'
 import { useSelector } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import Header from '@/components/Header.jsx';
+import Routes from '@/components/Routes/RoutesConfig.jsx';
 
 function BookStore() {
   const store = useSelector((store) => store);
   console.log(store);
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-  </h1>
+    <BrowserRouter>
+      <Header />
+      <main>
+        <Routes />
+      </main>
+    </BrowserRouter>
   )
 }
 
