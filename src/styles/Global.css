@@ -65,7 +65,7 @@ article button {
   margin-right: 0.3rem;
 }
 
-.form-wrapper button {
+.add-btn {
   padding: 0.5rem 1rem;
 }
 
@@ -73,4 +73,12 @@ article {
   border: 2px solid gray;
   padding: 0.5rem;
   margin: 0.3rem 0;
+}
+
+.remove-btn {
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: rgb(218, 218, 218);
 }
