@@ -1,46 +1,61 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-import { addNewBook } from '@/redux/books/bookSlice';
+import { addBook_API } from '@/apiServices/apiFunc';
+
 const AddBook = () => {
   const dispatch = useDispatch();
-  const [formDB, setFormDB] = useState({name:'', author:''});
+  const [formDB, setFormDB] = useState({
+    title:'',
+    author:'',
+    category: 'NA'
+  });
+
+  const resetForm = () => {
+    setFormDB({
+      title: '',
+      author: '',
+      category: 'NA'
+    });
+  }
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(addNewBook(formDB));
-    setFormDB({name:'', author:''});
+    dispatch(addBook_API(formDB));
+    resetForm();
   };
 
   const inputHandler = (e) => {
-    const value = e.target.value;
-    setFormDB({...formDB, [e.target.name]: value, id:v4()});
+    const {name, value} = e.target;
+    setFormDB({
+      ...formDB,
+      [name]: value,
+      item_id: v4()
+    });
   };
 
   return (
-    <>
-      <form className="form-wrapper" onSubmit={submitHandler}>
-        <input
-          type="text"
-          name="name"
-          value={formDB.name}
-          placeholder="Book Name"
-          onChange={inputHandler}
-          required
-        />
+    <form className="form-wrapper" onSubmit={submitHandler}>
+      <input
+        type="text"
+        name="title"
+        value={formDB.title}
+        placeholder="Book Name"
+        onChange={inputHandler}
+        required
+      />
 
-        <input
-          type="text"
-          name="author"
-          value={formDB.author}
-          placeholder="Author Name"
-          onChange={inputHandler}
-          required
-        />
+      <input
+        type="text"
+        name="author"
+        value={formDB.author}
+        placeholder="Author Name"
+        onChange={inputHandler}
+        required
+      />
 
-        <button type="submit">Add</button>
-      </form>
-    </>
+      <button type="submit" className="add-btn">Add</button>
+    </form>
   );
 };
 

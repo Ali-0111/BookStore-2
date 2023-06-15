@@ -1,19 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit';
-import removeById from '@/helpers/remove.js';
-const initialState = [];
+import add_API_helper from '@/helpers/add_API_helper.js';
+import removeBookHelper from '@/helpers/removeBookHelper.js';
+
+import { getBooks_API, addBook_API, removeBook_API } from '@/apiServices/apiFunc';
+const initialState = {
+  bookCollection: {},
+  isLoading: false,
+  message: ''
+};
 
 const bookSlice = createSlice(
   {
     name:'booksState',
     initialState,
-    reducers:{
-      addNewBook: (state, { payload: newBook }) => {
-        return [...state, newBook]
-      },
-      removeBook: (state, {payload: id}) => {
-        return removeById(state,id);
-      },
-    }
+    extraReducers: (builder) => {
+      builder.addCase(getBooks_API.fulfilled,(state, {payload}) => {
+        return {...state, bookCollection: payload}
+      });
+
+      builder.addCase(addBook_API.fulfilled,(state, {payload}) => {
+        return (add_API_helper(state, payload));
+      });
+
+      builder.addCase(removeBook_API.fulfilled,(state, {payload}) => {
+        return (removeBookHelper(state, payload));
+      });
+    },
   }
 );
 
