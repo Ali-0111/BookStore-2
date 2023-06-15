@@ -1,24 +1,20 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
-
-const AddBook = ({ update }) => {
-  const [bookName, setBookName] = useState('');
-  const [authorName, setAuthorName] = useState('');
+import { useDispatch } from 'react-redux';
+import { v4 } from 'uuid';
+import { addNewBook } from '@/redux/books/bookSlice';
+const AddBook = () => {
+  const dispatch = useDispatch();
+  const [formDB, setFormDB] = useState({name:'', author:''});
 
   const submitHandler = (e) => {
     e.preventDefault();
-    update(bookName, authorName);
-    setBookName('');
+    dispatch(addNewBook(formDB));
+    setFormDB({name:'', author:''});
   };
 
   const inputHandler = (e) => {
-    // input handler is for taking bookname
-    setBookName(e.target.value);
-  };
-
-  const selectHandler = (e) => {
-    // selectHandler is for selecting authors
-    setAuthorName(e.target.value);
+    const value = e.target.value;
+    setFormDB({...formDB, [e.target.name]: value, id:v4()});
   };
 
   return (
@@ -26,26 +22,26 @@ const AddBook = ({ update }) => {
       <form className="form-wrapper" onSubmit={submitHandler}>
         <input
           type="text"
-          value={bookName}
+          name="name"
+          value={formDB.name}
           placeholder="Book Name"
           onChange={inputHandler}
           required
         />
 
-        <select required onChange={selectHandler}>
-          <option value="">--Select author--</option>
-          <option value="author1">author1</option>
-          <option value="author2">author2</option>
-        </select>
-        <button type="submit">Add</button>
+        <input
+          type="text"
+          name="author"
+          value={formDB.author}
+          placeholder="Author Name"
+          onChange={inputHandler}
+          required
+        />
 
+        <button type="submit">Add</button>
       </form>
     </>
   );
-};
-
-AddBook.propTypes = {
-  update: PropTypes.func.isRequired,
 };
 
 export default AddBook;
