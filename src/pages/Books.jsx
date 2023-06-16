@@ -3,8 +3,9 @@ import BookList from '@/components/BookList/BookList.jsx';
 
 const Books = () => {
   return (
-    <section>
+    <section className="container mx-auto">
       <BookList />
+      <hr />
       <AddBook />
     </section>
   );

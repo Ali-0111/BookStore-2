@@ -10,17 +10,21 @@ const Buttons = ({ id }) => {
   };
 
   return (
-    <>
-      <button type="button">Comments</button>
+    <div className="buttons-wrapper text-style-8 mt-4">
+      <button type="button" className=" h-6">
+        Comments
+      </button>
       <button
+        className="remove-btn h-6 px-4 mx-4 border-l border-r border-white-three"
         type="button"
         onClick={removeHandler}
-        className="remove-btn"
       >
         Remove
       </button>
-      <button type="button">Edit</button>
-    </>
+      <button type="button" className=" h-6">
+        Edit
+      </button>
+    </div>
   );
 };
 
