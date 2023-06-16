@@ -1,28 +1,52 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
+
+@layer utilities {
+  .text-style-3 {
+    @apply font-montserrat font-bold text-3xl text-azure;
+  }
+
+  .text-style-5 {
+    @apply font-roboto font-bold text-2xl -tracking-[0.2px];
+  }
+
+  .text-style-10 {
+    @apply font-montserrat font-bold text-xl -tracking-[0.18px] text-[#888];
+  }
+
+  .text-style-4 {
+    @apply font-roboto font-bold text-xl -tracking-[0.4px] text-[#121212];
+  }
+
+  .text-style-2 {
+    @apply font-montserrat text-sm;
+  }
+
+  .text-style-8 {
+    @apply font-roboto text-sm text-[#4386bf] font-light;
+  }
+
+  .text-style {
+    @apply font-roboto text-xs font-bold tracking-[0.5px] text-center text-white-two;
+  }
+
+  .text-style-6 {
+    @apply font-montserrat text-sm text-[#121212] tracking-[1.9px];
+  }
+
+  .text-style-7 {
+    @apply font-roboto font-light text-sm text-[#121212];
+  }
 }
 
-li {
-  list-style: none;
+.active {
+  opacity: 1;
 }
 
-.main-head {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  margin: 1rem auto;
-  border: 1px solid black;
-  height: 10vh;
-  padding: 0.5rem;
-}
-
-.links {
+/* .links {
   display: flex;
 }
 
@@ -31,7 +55,7 @@ li {
   text-decoration: none;
   color: black;
   padding: 1rem;
-}
+} */
 
 main {
   width: 80%;
