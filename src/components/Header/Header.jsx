@@ -1,5 +1,5 @@
 import NavItem from '@/components/Navs/NavItem.jsx';
-import ProfileIcon from '@/components/ProfileIcon.jsx';
+import ProfileIcon from '@/components/Header/ProfileIcon.jsx';
 
 const Header = () => (
   <header className="main-head border py-5">
