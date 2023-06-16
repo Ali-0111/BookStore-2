@@ -14,7 +14,7 @@ function BookStore() {
   return (
     <BrowserRouter>
       <Header />
-      <main>
+      <main className="flex-1 bg-pale-grey">
         <Routes />
       </main>
     </BrowserRouter>
