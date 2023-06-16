@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import Header from '@/components/Header.jsx';
+import Header from '@/components/Header/Header.jsx';
 import Routes from '@/components/Routes/RoutesConfig.jsx';
 import { getBooks_API } from '@/apiServices/apiFunc.js';
 import '@/styles/Global.css'
