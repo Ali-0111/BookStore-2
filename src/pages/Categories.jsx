@@ -10,7 +10,7 @@ const Category = () => {
   }, []);
   const {category_state} = useSelector((store) => (store));
   return (
-    <div>
+    <div className="container mx-auto">
       <h2> {category_state} </h2>
     </div>
   );
