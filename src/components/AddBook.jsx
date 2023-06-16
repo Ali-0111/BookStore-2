@@ -35,8 +35,15 @@ const AddBook = () => {
   };
 
   return (
-    <form className="form-wrapper" onSubmit={submitHandler}>
+    <div className="form-wrapper mt-5 mb-10
+      container mx-auto font-montserrat text-sm"
+    >
+      <h2 className="text-style-10">ADD NEW BOOK</h2>
+      <form className="my-5 flex justify-between items-center"
+        onSubmit={submitHandler}
+      >
       <input
+        className="w-[50%] py-2 px-4 outline-none border border-e8e8e8 rounded-[4px]"
         type="text"
         name="title"
         value={formDB.title}
@@ -46,6 +53,7 @@ const AddBook = () => {
       />
 
       <input
+        className="w-[30%] py-2 px-4 outline-none border border-e8e8e8 rounded-[4px]"
         type="text"
         name="author"
         value={formDB.author}
@@ -54,8 +62,13 @@ const AddBook = () => {
         required
       />
 
-      <button type="submit" className="add-btn">Add</button>
+      <button type="submit"
+        className="add-btn w-[15%] py-2 px-4 bg-azure
+        border border-e8e8e8 rounded-[4px] text-white">
+        Add
+      </button>
     </form>
+  </div>  
   );
 };
 
