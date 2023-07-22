@@ -18,6 +18,9 @@ export default {
         'montserrat': ['Montserrat', 'sans-serif'],
         'roboto': ['RobotoSlab', 'sans-serif'],
       },
+      screens: {
+        'xs': '480px'
+      },
     },
   },
   plugins: [],
