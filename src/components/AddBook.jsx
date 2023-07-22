@@ -36,7 +36,7 @@ const AddBook = () => {
 
   return (
     <div className="form-wrapper mt-5 mb-10
-      container max-xs:px-2 mx-auto font-montserrat text-sm"
+      container px-2 mx-auto font-montserrat text-sm"
     >
       <h2 className="text-style-10">ADD NEW BOOK</h2>
       <form className="my-5 flex justify-between items-center"

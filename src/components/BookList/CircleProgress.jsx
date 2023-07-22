@@ -22,7 +22,7 @@ const middleCircle = {
 }
 const ProgressBar = () => {
   return (
-    <div className="wrapper max-xs:h-[3.5rem] max-xs:w-[3.5rem]" style={ContainerStyle}>
+    <div className="wrapper max-sm:h-[3.5rem] max-sm:w-[3.5rem]" style={ContainerStyle}>
       <div className="circleWithBackground" style={circlWithBackground}>
         <div className="middleCircle" style={middleCircle}>
         </div>

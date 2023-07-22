@@ -1,7 +1,7 @@
 const Alert = () => {
  return (
   <div
-  className="inline-flex w-fit items-center rounded-lg bg-blue-200 text-base text-black px-2 max-xs:rounded-none max-xs:absolute max-xs:bottom-2 max-xs:left-[25%]"
+  className="inline-flex w-fit items-center  bg-blue-200 text-base text-black px-2 py-4 rounded-none sm:rounded-lg fixed bottom-2 right-2"
   role="alert">
     <span className="mr-2 text-green-400">
       <svg

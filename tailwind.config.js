@@ -19,7 +19,7 @@ export default {
         'roboto': ['RobotoSlab', 'sans-serif'],
       },
       screens: {
-        'xs': '480px'
+        'xs': '640px'
       },
     },
   },

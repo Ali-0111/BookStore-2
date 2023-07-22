@@ -8,7 +8,7 @@ const BookTestInfo = ({name, author}) => {
       >
         Action
       </p>
-      <h2 className="book-name text-style-5">{name}</h2>
+      <h2 className="book-name text-lg font-bold sm:text-style-5">{name}</h2>
       <p className="book-author text-style-8">{author}</p>
     </>
   );

@@ -10,7 +10,7 @@ import Alert from '@/components/BookList/Alert';
 const Book = ({ name, author,id }) => {
   const [alert, setAlert] = useState(false);
   return (
-    <article className="relative border book-card h-40 max-xs:h-[170px] bg-white max-xs:px-2 px-6 py-8 flex justify-between items-center">
+    <article className="relative border book-card py-1 h-fit bg-white px-2 sm:px-6 flex justify-between items-center">
 
       <div className="flex-1">
         <BookTextInfo name={name} author={author} />

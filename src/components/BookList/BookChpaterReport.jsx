@@ -9,19 +9,18 @@ export default function BookChapterReport() {
     setTimeout(() => {setAlert(false)}, 2000)
   };
   return(
-    <div className="max-xs:px-[0.75rem]">
-      <p className="text-style-7 max-xs:text-[10px] opacity-50">CURRENT CHAPTER</p>
-      <p className="text-style-4 max-xs:text-sm">Chapter 17</p>
+    <div className="px-[0.75rem]">
+      <p className="text-[10px] font-bold sm:text-style-7 opacity-90 sm:opacity-50">CURRENT CHAPTER</p>
+      <p className="text-[10px] sm:text-style-4">Chapter 17</p>
       
       <button
         type="button"
-        className="py-1 px-4 max-xs:px-1 max-xs:text-left text-white-two text-sm my-4
+        className="py-1 px-1 sm:px-4  text-left sm:text-center text-white-two text-sm my-4
         bg-azure rounded-[3px] font-roboto font-light
         tracking-[0.5px] cursor-pointer"
         onClick = {alertHandler}
-
       >
-        UPDATE PROGRESS
+        UPDATE
       </button>
 
       {alert && <Alert />}

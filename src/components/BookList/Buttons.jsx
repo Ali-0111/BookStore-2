@@ -15,12 +15,12 @@ const Buttons = ({ id, setAlert}) => {
   };
 
   return (
-    <div className="buttons-wrapper max-xs:flex max-xs:flex-col max-xs:items-start text-style-8 mt-4">
+    <div className="buttons-wrapper flex flex-col items-start sm:block text-style-8 mt-4">
       <button type="button" className="h-6 cursor-pointer" onClick={alertHandler}>
         Comments
       </button>
       <button
-        className="remove-btn h-6 cursor-pointer"
+        className="remove-btn h-6 cursor-pointer sm:border-l sm:border-r sm:border-white-three sm:px-2 sm:mx-2"
         type="button"
         onClick={removeHandler}
       >
